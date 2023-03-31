@@ -20,8 +20,7 @@
 
 
 def spiralize(size):
-    matrix = list(
-        map(lambda x: list(map(lambda y: 1 if (int(size + 1) / 2) % 2 == 1 else 0, range(0, size))), range(0, size)))
+    matrix = [[1 if (int(size + 1) / 2) % 2 == 1 else 0 for _ in range(size)] for _ in range(size)]
     spiral = 1
     for i in range(0, int(size / 2)):
         for u in range(0, size - i * 2):
