@@ -55,3 +55,6 @@ def find_hack(arr):
 
 
 print(find_hack(arr))
+
+# @ -> https://www.codewars.com/users/rokas2019/completed_solutions
+# You can find version in which I've used (map, filter, lambda) functions
