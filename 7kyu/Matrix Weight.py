@@ -39,11 +39,13 @@ from math import sqrt
 
 
 def thin_or_fat(matrix):
+    # Check for negative elements
+    if any(any(x < 0 for x in row) for row in matrix):
+        return None
+
     n = len(matrix)
     width_roots = [sqrt(sum(row)) for row in matrix]
     height_roots = [sqrt(sum(col)) for col in zip(*matrix)]
-    if any(x < 0 for x in width_roots + height_roots):
-        return None
     width_sum = sum(width_roots)
     height_sum = sum(height_roots)
     if abs(width_sum - height_sum) < 1e-10:
