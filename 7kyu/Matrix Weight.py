@@ -36,6 +36,7 @@
 #
 # If a Width or a Height is negative, return None
 from math import sqrt
+import numpy
 
 
 def thin_or_fat(matrix):
@@ -54,3 +55,20 @@ def thin_or_fat(matrix):
         return "fat"
     else:
         return "thin"
+
+
+# Using numpy library
+
+def thin_or_fat_2(matrix):
+    matrix = numpy.array(matrix)
+    height = numpy.sqrt(matrix.sum(axis=0)).sum()
+    width = numpy.sqrt(matrix.sum(axis=1)).sum()
+    if abs(height - width) < 1e-10:
+        return 'perfect'
+    elif height > width:
+        return 'thin'
+    elif height < width:
+        return 'fat'
+    else:
+        return None
+
